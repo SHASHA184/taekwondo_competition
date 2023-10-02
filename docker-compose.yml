@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  # Django web application service
+  web:
+    build: .
+    container_name: taekwondo_app
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8002"]
+    volumes:
+      - .:/app
+    ports:
+      - "8002:8002"

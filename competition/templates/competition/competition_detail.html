@@ -1,0 +1,37 @@
+{% extends "./base.html" %}
+
+{% block title %}{{ competition.name }} Details{% endblock %}
+
+{% block content %}
+    <h1>{{ competition.name }} Details</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{ competition.name }}</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>{{ competition.location }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ competition.date }}</td>
+        </tr>
+        <tr>
+            <th>Finished</th>
+            <td>{% if competition.finished %}Yes{% else %}No{% endif %}</td>
+        </tr>
+        <tr>
+            <th>First Place</th>
+            <td>{{ competition.first_place.name }}</td>
+        </tr>
+        <tr>
+            <th>Second Place</th>
+            <td>{{ competition.second_place.name }}</td>
+        </tr>
+        <tr>
+            <th>Third Place</th>
+            <td>{{ competition.third_place.name }}</td>
+        </tr>
+    </table>
+{% endblock %}

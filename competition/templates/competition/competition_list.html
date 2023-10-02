@@ -1,0 +1,20 @@
+{% extends "./base.html" %}
+
+{% block title %}Competition List{% endblock %}
+
+{% block content %}
+<body>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'competition/competition_list.css' %}">
+</body>
+    <div class="header">
+        <h1>Competition List</h1>
+        <a href="{% url 'competition-create' %}" class="add-competition"></a>
+    </div>
+    <ul>
+        {% for competition in competitions %}
+            <li><a href="{% url 'competition-detail' competition.pk %}" class="competition">{{ competition.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,33 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore database files
+*.sqlite3
+
+# Ignore environment-specific settings
+.env
+
+# Ignore media uploads (user-uploaded files)
+media/
+
+# Ignore static files (collected assets)
+staticfiles/
+
+# Ignore PostgreSQL database files
+*.pg
+*.pgdata
+
+
+# Ignore virtual environment
+venv/
+
+# Ignore IDE and text editor files (customize this as needed)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore system and backup files
+.DS_Store
+Thumbs.db

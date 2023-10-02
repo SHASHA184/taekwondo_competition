@@ -1,0 +1,37 @@
+{% extends "./base.html" %}
+
+{% block title %}Member List{% endblock %}
+
+{% block content %}
+    <h1>Member List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Belt Rank</th>
+                <th>Weight Class</th>
+                <th>Team</th>
+                <th>Location</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+                <tr>
+                    <td>{{ member.name }}</td>
+                <td>{{ member.age }}</td>
+                <td>{{ member.gender }}</td>
+                <td>{{ member.belt_rank.name }}</td>
+                <td>{{ member.weight_class.name }}
+                    ({{ member.weight_class.weight_from }}-{{member.weight_class.weight_to }} kg)</td>
+                <td>{{ member.team.name }}</td>
+                <td>{{ member.team.location }}</td>
+                <td>{{ member.rating }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'home' %}">Home</a>
+{% endblock %}

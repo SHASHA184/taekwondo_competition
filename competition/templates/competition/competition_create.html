@@ -1,0 +1,19 @@
+{% extends "./base.html" %}
+
+{% block title %}Add Competition{% endblock %}
+
+{% block content %}
+<body>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'competition/competition_create.css' %}">
+</body>
+    <div class="header">
+        <h1>Add Competition</h1>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save">Save</button>
+    </form>
+{% endblock %}
+```
