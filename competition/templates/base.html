@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'competition/base.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Potta+One:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" />
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <div class="mask-group">
+        <div class="main-page">
+            <nav class="sidebar" id="nav">
+                <div class="sidebar-element">
+                    <a href="{% url 'competitions-list' %}" class="button">Competitions</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'members-list' %}" class="button">Members</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'judges-list' %}" class="button">Judges</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'teams-list' %}" class="button">Teams</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'matches-list' %}" class="button">Matches</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'reports_filters' %}" class="button">Reports</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'generate-matches' %}" class="button">Generate Matches</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'team-statistics' %}" class="button">Team Statistics</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'member-statistics' %}" class="button">Member Statistics</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'competition-statistics' %}" class="button">Competition Statistics</a>
+                </div>
+                
+            </nav>
+
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_list.css' %}">
+<script>
+    function confirmDelete(itemName) {
+        return confirm('Do you really want to delete judge "' + itemName + '"?');
+    }
+</script>
+{% endblock %}
+{% block content %}
+<div class="add-container">
+    <a href="{% url 'judge-create' %}" class="add-button">Add New Judge</a>
+</div>
+<table class="judges-table">
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Qualification</th>
+            <th colspan="3">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for judge in judges %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ judge.full_name }}</td>
+            <td>{{ judge.age }}</td>
+            <td>{{ judge.qualification.name }}</td>
+            <td><a class="detail-button" href="{% url 'judge-detail' judge.id %}">Detail</a></td>
+            <td><a class="edit-button" href="{% url 'judge-edit' judge.id %}">Edit</a></td>
+            <td><a class="delete-button" href="{% url 'judge-delete' judge.id %}"
+                    onclick="return confirmDelete('{{ judge.full_name }}')">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

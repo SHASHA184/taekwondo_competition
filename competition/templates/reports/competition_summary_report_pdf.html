@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: "Helvetica", "Arial", sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .report-header {
+            text-align: left;
+        }
+
+        .report-summary {
+            text-align: right;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 50px;
+        }
+
+        .signature-space {
+            border-bottom: 1px solid #000;
+            width: 200px;
+            display: inline-block;
+        }
+
+        .report-date {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .report-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sub-table {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .sub-table th,
+        .sub-table td {
+            padding: 4px;
+            border: 1px solid #eaeaea;
+            font-size: 0.9em;
+        }
+
+        .sub-table th {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="report-header">
+        <h2>Competition Summary Report</h2>
+    </div>
+
+
+    <div class="report-summary">
+        <p>Total Competitions: {{ competitions|length }}</p>
+        <p>Total Matches Played: {{ total_matches }}</p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Number of Matches</th>
+                <th>Number of Teams</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for competition in competitions %}
+            <tr>
+                <td>{{ competition.name }}</td>
+                <td>{{ competition.date }}</td>
+                <td>{{ competition.location }}</td>
+                <td>{{ competition.num_matches }}</td>
+                <td>{{ competition.num_teams }}</td>
+            </tr>
+            {% if competition.competitioncategory_set.exists and competition.num_matches > 0 %}
+            <tr>
+                <td colspan="5">
+                    <table class="sub-table">
+                        <thead>
+                            <tr>
+                                <th>Match Time</th>
+                                <th>Judge</th>
+                                <th>Round</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for category in competition.competitioncategory_set.all %}
+                            {% for match in category.match_set.all %}
+                            <tr>
+                                <td>{{ match.match_time }}</td>
+                                <td>{{ match.judge.full_name }}</td>
+                                <td>{{ match.get_round_display }}</td>
+                                <td>{{ category.weight_class }}</td>
+                            </tr>
+                            {% endfor %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="report-footer">
+        <div class="report-date">
+            <p>Report Generated On: {{ report_date }}</p>
+        </div>
+        <div class="signature">
+            <span class="signature-space"></span>
+            <p>Authorized Signature</p>
+        </div>
+    </div>
+</body>
+
+</html>

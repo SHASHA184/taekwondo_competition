@@ -1,0 +1,118 @@
+<!-- team_statistics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Statistics</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+            /* Выравнивание заголовка по центру */
+            color: #333;
+            /* Темно-серый цвет для большего профессионализма */
+            margin-top: 40px;
+            /* Отступ сверху для разделения текста от предыдущего контента */
+            margin-bottom: 20px;
+            /* Отступ снизу перед таблицей */
+            padding: 10px 0;
+            /* Паддинг сверху и снизу */
+            border-bottom: 2px solid #333;
+            /* Тонкая линия того же цвета, что и текст для акцентирования */
+            display: block;
+            /* Блочный элемент занимает всю ширину */
+        }
+
+        /* Стиль для описания, расположенного над таблицей, если требуется */
+        p.description {
+            text-align: center;
+            color: #555;
+            /* Светло-серый цвет текста для лучшей читаемости */
+            font-size: 1em;
+            /* Стандартный размер шрифта */
+            margin-top: 10px;
+            margin-bottom: 20px;
+            /* Отступ снизу перед таблицей */
+        }
+
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* добавляем этот стиль */
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            width: 50%;
+            padding: 10px;
+            text-align: left;
+            word-wrap: break-word;
+            /* добавляем этот стиль */
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Team Statistics</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                <th>Location</th>
+                <th>Total Members</th>
+                <th>Average Age</th>
+                <th>Total Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in teams %}
+                <tr>
+                    <td>{{ team.name }}</td>
+                    <td>{{ team.location }}</td>
+                    <td>{{ team.num_members }}</td>
+                    <td>{{ team.avg_age|floatformat:2 }}</td>
+                    <td>{{ team.total_rating }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No team data available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

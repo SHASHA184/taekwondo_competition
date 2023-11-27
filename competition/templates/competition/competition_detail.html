@@ -1,37 +1,36 @@
-{% extends "./base.html" %}
+{% extends "base.html" %}
 
-{% block title %}{{ competition.name }} Details{% endblock %}
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_detail.css' %}">
+{% endblock %}
 
 {% block content %}
-    <h1>{{ competition.name }} Details</h1>
-    <table>
-        <tr>
-            <th>Name</th>
-            <td>{{ competition.name }}</td>
-        </tr>
-        <tr>
-            <th>Location</th>
-            <td>{{ competition.location }}</td>
-        </tr>
-        <tr>
-            <th>Date</th>
-            <td>{{ competition.date }}</td>
-        </tr>
-        <tr>
-            <th>Finished</th>
-            <td>{% if competition.finished %}Yes{% else %}No{% endif %}</td>
-        </tr>
-        <tr>
-            <th>First Place</th>
-            <td>{{ competition.first_place.name }}</td>
-        </tr>
-        <tr>
-            <th>Second Place</th>
-            <td>{{ competition.second_place.name }}</td>
-        </tr>
-        <tr>
-            <th>Third Place</th>
-            <td>{{ competition.third_place.name }}</td>
-        </tr>
-    </table>
+<div class="detail">
+    <h2>{{ competition.name }} Details</h2>
+    <p>Location: {{ competition.location }}</p>
+    <p>Date: {{ competition.date }}</p>
+    <p>Finished: {{ competition.finished|yesno:"Yes,No" }}</p>
+    <h3>Categories:</h3>
+    <ul>
+        {% for category in categories %}
+        <li>{{ category.weight_class }}</li>
+        {% empty %}
+        <li>No categories added yet.</li>
+        {% endfor %}
+    </ul>
+    <h3>Matches:</h3>
+    {% if matches %}
+    <ul>
+        {% for match in matches %}
+        <li>{{ match.player1 }} vs {{ match.player2 }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No matches added yet.</p>
+    {% endif %}
+    <a href="{% url 'matches-list' %}" class="edit-button">View All Matches</a>
+</div>
+
+
 {% endblock %}

@@ -1,0 +1,146 @@
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+input {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.match-form {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+.save-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+
+.content {
+    /* ... other styles ... */
+    position: relative; /* remove absolute positioning */
+    top: 0; /* start from the top edge of the main-page */
+    left: 15%; /* leave space for the sidebar */
+    width: 85%; /* take the remaining width of the screen */
+    max-height: calc(100vh); /* set a maximum height with respect to the viewport height */
+    overflow-y: auto; /* allow vertical scrolling */
+    transform: none; /* remove any transformation */
+    margin-top: 20px; /* adjust the margin at the top if necessary */
+    padding: 20px; /* maintain padding for aesthetics */
+}
+
+.main-page {
+    /* ... other styles ... */
+    display: flex; /* using flexbox layout to position sidebar and content */
+    flex-direction: row; /* align children (sidebar and content) in a row */
+    width: 100%; /* ensure it takes full width */
+    min-height: 100vh; /* minimum height should be the full viewport height */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* existing shadow style */
+}
+
+.edit-button, .cancel-button, .add-button {
+    padding: 10px 15px; /* Padding inside the buttons */
+    margin-right: 10px; /* Adds margin to the right of buttons */
+    text-decoration: none; /* Removes underline from the cancel link */
+    display: inline-block; /* Allows buttons and links to sit side by side */
+    font-size: 1rem; /* Sets a font size for the buttons */
+    border: none; /* Removes border */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Specific style for the save button */
+.edit-button, .add-button {
+    color: white; /* White text for the save button */
+    background-color: #007bff; /* Green background for a save button */
+}
+
+/* Hover style for the save button */
+.edit-button:hover, .add-button:hover {
+    background-color: #0056b3; /* A lighter green on hover */
+}
+
+.member-form {
+    border: 1.5px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+
+/* Style for the form container */
+.edit-form {
+    max-width: 500px; /* Sets a max-width for the form */
+    margin: 0 auto; /* Centers the form in the middle of the page */
+    padding: 20px; /* Adds padding inside the form */
+    background: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow to lift the form off the page */
+}
+
+/* Style for the form fields */
+.edit-form p {
+    margin: 20px 0; /* Adds top and bottom margin to each form field paragraph */
+}
+
+/* Style for labels and inputs within the paragraphs */
+.edit-form label,
+.edit-form textarea,
+.edit-form select {
+    display: block; /* Makes each label, input, textarea, and select element a block */
+    width: 100%; /* Full width */
+    margin-top: 5px; /* Adds a little margin at the top of each form control */
+}
+
+/* Style for input fields */
+.edit-form textarea,
+.edit-form select {
+    padding: 10px; /* Padding inside the fields */
+    border: 1px solid #ddd; /* A subtle border */
+    border-radius: 4px; /* Slightly rounded borders for the inputs */
+    box-sizing: border-box; /* Makes sure padding doesn't affect the overall width */
+}
+
+/* Hover and focus styles for interactive elements */
+.edit-form input:hover,
+.edit-form textarea:hover,
+.edit-form select:hover,
+.edit-form input:focus,
+.edit-form textarea:focus,
+.edit-form select:focus {
+    border-color: #3498db; /* Changes the border color on hover/focus */
+}
+
+.edit-form textarea {
+    height: 100px; /* A higher default height for the textarea */
+    resize: vertical; /* Allow the user to vertically resize the textarea */
+}

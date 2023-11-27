@@ -3,3 +3,4 @@ python-dotenv==1.0.0
 psycopg2-binary==2.9.3
 django-sidebar==0.2.0
 django-extensions==3.2.3
+weasyprint==60.1

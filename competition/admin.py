@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Competition, Team, Coach, Member, Belt, WeightClass, Match, Judge, JudgeQualification, Score
-
+from .models import Competition, Team, Coach, Member, Belt, WeightClass, Match, Judge, JudgeQualification, MatchMember, CompetitionCategory
+from .forms import MemberForm
 # Register your models here.
 admin.site.register(Competition)
 admin.site.register(Team)
@@ -11,4 +11,10 @@ admin.site.register(WeightClass)
 admin.site.register(Match)
 admin.site.register(Judge)
 admin.site.register(JudgeQualification)
-admin.site.register(Score)
+admin.site.register(MatchMember)
+admin.site.register(CompetitionCategory)
+
+
+class MemberAdmin(admin.ModelAdmin):
+    form = MemberForm
+    # view all fields but can't add weight_class

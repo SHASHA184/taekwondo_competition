@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="detail">
+    <h2>{{ judge.full_name }} Details</h2>
+    <p>Age: {{ judge.age }}</p>
+    <p>Qualification: {{ judge.qualification.name }}</p>
+    <!-- view all qualifications -->
+    <a class="edit-button" href="{% url 'qualification-list' %}">View All Qualifications</a>
+</div>
+
+{% endblock %}
+```

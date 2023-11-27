@@ -7,12 +7,13 @@
 
 {% block content %}
 <div class="edit-form">
-    <h1>Add Competition</h1>
-    <form method="post" enctype="multipart/form-data" class="edit-form" action="{% url 'competition-create' %}">
+    <h1>Add Coach</h1>
+    <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input class="edit-button" type="submit" value="Create Competition" />
+        <input class="edit-button" type="submit" value="Create Coach" />
     </form>
 </div>
+
 {% endblock %}
 ```

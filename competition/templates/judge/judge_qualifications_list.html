@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<table class="qualification-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for qualification in qualifications %}
+        <tr>
+            <td>{{ qualification.name }}</td>
+            <td>{{ qualification.description }}</td>
+            <td><a class="edit-button" href="{% url 'qualification-edit' qualification.id %}">Edit</a></td>
+            <td><a class="delete-button" href="{% url 'qualification-delete' qualification.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
+```

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="detail">
+    <h2>{{ team.name }} Details</h2>
+    <p>Location: {{ team.location }}</p>
+    <h2>Coaches:</h2>
+    <ul>
+        {% for coach in coaches %}
+        <a href="{% url 'coach-detail' coach.id %}" class="edit-button">{{ coach.full_name }}</a>
+        {% empty %}
+        <li>No coaches added yet.</li>
+        {% endfor %}
+    </ul>
+    <h2>Members:</h2>
+    <ul>
+        {% for member in members %}
+        <a href="{% url 'member-detail' member.id %}" class="edit-button">{{ member.full_name }}</a>
+        {% empty %}
+        <li>No members added yet.</li>
+        {% endfor %}
+</div>
+
+{% endblock %}
+```

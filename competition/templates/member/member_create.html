@@ -1,0 +1,40 @@
+<!-- member_create.html -->
+
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_create.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="get" class="edit-form">
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" value="{{ request.GET.age }}" onchange="this.form.submit()">
+    
+    <label for="gender">Gender:</label>
+    <select name="gender" id="gender" onchange="this.form.submit()">
+        <option value="">Select Gender</option>
+        {% for value, name in form.fields.gender.choices %}
+        <option value="{{ value }}" {% if value|stringformat:"s" == request.GET.gender %}selected{% endif %}>{{ name }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+{% if request.GET.age and request.GET.gender %}
+<form method="post" class="edit-form">
+    {% csrf_token %}
+    <label for="full_name">Full Name:</label>
+    {{ form.full_name }}
+    <label for="team">Team:</label>
+    {{ form.team }}
+    <input type="hidden" name="age" value="{{ request.GET.age }}">
+    <input type="hidden" name="gender" value="{{ request.GET.gender }}">
+    <label for="weight_class">Weight Class:</label>
+    {{ form.weight_class }}
+    <label for="belt">Belt:</label>
+    {{ form.belt_rank }}
+    <input class="edit-button" type="submit" value="Create Member" />
+</form>
+{% endif %}
+{% endblock %}

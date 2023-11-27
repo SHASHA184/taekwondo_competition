@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_create.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Filter by competition -->
+<form method="get" class="edit-form">
+    <label for="competition">Competition:</label>
+    <select name="competition" id="competition" onchange="this.form.submit()">
+        <option value="">Select Competition</option>
+        {% for competition in competitions %}
+        <option value="{{ competition.id }}" {% if competition.id|stringformat:"s" == request.GET.competition %}selected{% endif %}>
+            {{ competition.name }} ({{ competition.date }})
+        </option>
+        {% endfor %}
+    </select>
+</form>
+
+{% if request.GET.competition %}
+<form method="get" class="edit-form">
+    <input type="hidden" name="competition" value="{{ request.GET.competition }}">
+    <label for="competition_category">Category:</label>
+    <select name="competition_category" id="competition_category" onchange="this.form.submit()">
+        <option value="">Select Category</option>
+        {% for category in competition_categories %}
+        <option value="{{ category.id }}" {% if category.id|stringformat:"s" == request.GET.competition_category %}selected{% endif %}>
+            {{ category.weight_class.name }}
+        </option>
+        {% endfor %}
+    </select>
+</form>
+{% endif %}
+
+{% if request.GET.competition and request.GET.competition_category %}
+<form method="post" enctype="multipart/form-data" class="edit-form">
+    {% csrf_token %}
+    <label for="match_time">Match Time:</label>
+    {{ form.match_time }}
+    <label for="judge">Judge:</label>
+    {{ form.judge }}
+    <label for="round">Round:</label>
+    {{ form.round }}
+    {{ formset.management_form }}
+    {% for form in formset %}
+    {{ form.as_p }}
+    {% endfor %}
+    <input class="edit-button" type="submit" value="Create Match" />
+</form>
+{% endif %}
+{% endblock %}
+```

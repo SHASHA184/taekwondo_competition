@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Add your CSS styles for printing here */
+        body {
+            font-family: "Helvetica", "Arial", sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .report-header {
+            text-align: left;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 50px;
+        }
+
+        .signature-space {
+            border-bottom: 1px solid #000;
+            width: 200px;
+            display: inline-block;
+        }
+
+        .report-date {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .report-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Member Performance Report</h2>
+    <!-- Report Summary -->
+    <div class="report-summary">
+        <p>Total Members: {{ members|length }}</p>
+        <p>Total Matches Played: {{ total_matches }}</p>
+        <!-- Add more summary stats as needed -->
+    </div>
+    <!-- Filter Summary -->
+    <div class="filter-summary">
+        <p>Filters Applied:</p>
+        <p>Date Range: {{ date_from }} - {{ date_to }}</p>
+        <p>Team: {{ team_name }}</p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Member Name</th>
+                <th>Total Matches</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Rating</th>
+                <!-- if team_name is All Teams -->
+                {% if team_name == "All Teams" %}
+                <th>Team Name</th>
+                {% endif %}
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.full_name }}</td>
+                <td>{{ member.total_matches }}</td>
+                <td>{{ member.wins }}</td>
+                <td>{{ member.losses }}</td>
+                <td>{{ member.rating }}</td> <!-- Display member rating -->
+                {% if team_name == "All Teams" %}
+                <td>{{ team_name }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="report-footer">
+        <div class="report-date">
+            <p>Report Generated On: {{ report_date }}</p>
+        </div>
+        <div class="signature">
+            <span class="signature-space"></span>
+            <p>Authorized Signature</p>
+        </div>
+    </div>
+</body>
+
+</html>

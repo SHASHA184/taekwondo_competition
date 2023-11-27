@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_create.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="edit-form" action="{% url 'judge-create' %}">
+    <h1>Add Judge</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!-- add more qualifications -->
+    <a class="add-button" href="{% url 'qualification-create' %}">Add Qualification</a>
+    <br>
+    <input class="edit-button" type="submit" value="Create Judge" />
+    <a class="add-button" href="{% url 'judges-list' %}">Cancel</a>
+</form>
+
+{% endblock %}

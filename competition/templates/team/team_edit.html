@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_edit.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="post" class="edit-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>Edit Team</h2>
+    {{ team_form.as_p }}
+
+    <div id="member-form">
+        <h3>Members</h3>
+        {{ member_formset.management_form }}
+        {% for form in member_formset %}
+        <div id="member-{{ forloop.counter0 }}" class="member-form">
+            {{ form.as_p }}
+        </div>
+        {% endfor %}
+    </div>
+    <h3>Coaches</h3>
+    {{ coach_formset.management_form }}
+    {% for form in coach_formset %}
+    {{ form.as_p }}
+    {% endfor %}
+    <input type="submit" value="Save" class="save-button">
+</form>
+{% endblock %}
+```

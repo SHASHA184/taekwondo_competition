@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Page</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+            /* Выравнивание заголовка по центру */
+            color: #333;
+            /* Темно-серый цвет для большего профессионализма */
+            margin-top: 40px;
+            /* Отступ сверху для разделения текста от предыдущего контента */
+            margin-bottom: 20px;
+            /* Отступ снизу перед таблицей */
+            padding: 10px 0;
+            /* Паддинг сверху и снизу */
+            border-bottom: 2px solid #333;
+            /* Тонкая линия того же цвета, что и текст для акцентирования */
+            display: block;
+            /* Блочный элемент занимает всю ширину */
+        }
+
+        /* Стиль для описания, расположенного над таблицей, если требуется */
+        p.description {
+            text-align: center;
+            color: #555;
+            /* Светло-серый цвет текста для лучшей читаемости */
+            font-size: 1em;
+            /* Стандартный размер шрифта */
+            margin-top: 10px;
+            margin-bottom: 20px;
+            /* Отступ снизу перед таблицей */
+        }
+
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* добавляем этот стиль */
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            width: 50%;
+            padding: 10px;
+            text-align: left;
+            word-wrap: break-word;
+            /* добавляем этот стиль */
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Members Page</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Belt Rank</th>
+                <th>Weight Class</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.full_name }}</td>
+                <td>{{ member.age }}</td>
+                <td>{{ member.get_gender_display }}</td>
+                <td>{{ member.belt_rank }}</td>
+                <td>{{ member.weight_class }}</td>
+                <td>{{ member.rating }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Member Statistics:</h2>
+    <ul>
+        <li>Total Members: {{ total_members }}</li>
+        <li>Average Age: {{ average_age|default:"N/A" }}</li>
+    </ul>
+    
+    <!-- Gender Distribution -->
+    <h2>Gender Distribution:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Gender</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gender in gender_distribution %}
+            <tr>
+                <td>{{ gender.gender }}</td>
+                <td>{{ gender.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <!-- Belt Rank Distribution -->
+    <h2>Belt Rank Distribution:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Belt Rank</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for belt in belt_rank_distribution %}
+            <tr>
+                <td>{{ belt.belt_rank__name }}</td>
+                <td>{{ belt.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Weight Class Distribution -->
+    <h2>Weight Class Distribution:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Weight Class</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for weight_class in weight_class_distribution %}
+            <tr>
+                <td>{{ weight_class.weight_class__name }}</td>
+                <td>{{ weight_class.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Team Distribution -->
+    <h2>Team Distribution:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in team_distribution %}
+            <tr>
+                <td>{{ team.team__name }}</td>
+                <td>{{ team.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

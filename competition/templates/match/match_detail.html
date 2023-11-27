@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="detail">
+    <h2>{{ match.competition_category.competition.name }} Details</h2>
+    <p>Match Date: {{ match.match_time|date:"Y-m-d" }}</p>
+    <p>Match Time: {{ match.match_time|time:"H:i" }}</p>
+    <p>Finished: {{ match.finished|yesno:"Yes,No" }}</p>
+    <p>Round: {{ match.get_round_display }}</p>
+    <p>Winner: {{ winner.full_name }}</p>
+
+    {% for member in members %}
+        <p>Member {{ forloop.counter }}: {{ member.member.full_name }} (Score: {{ member.score }})</p>
+    {% endfor %}
+
+    <p>Competition: {{ match.competition_category.competition.name }}</p>
+    <p>Competition Category: {{ match.competition_category }}</p>
+    <p>Competition Location: {{ match.competition_category.competition.location }}</p>
+    <p>Competition Date: {{ match.competition_category.competition.date|date:"Y-m-d" }}</p>
+    <p>Competition Time: {{ match.competition_category.competition.date|time:"H:i" }}</p>
+    <p>Competition Finished: {{ match.competition_category.competition.finished|yesno:"Yes,No" }}</p>
+
+    <a class="edit-button" href="{% url 'matches-list' %}">View All Matches</a>
+</div>
+{% endblock %}
+```

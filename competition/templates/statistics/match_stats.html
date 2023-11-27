@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Statistics</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Match Statistics</h1>
+
+    <!-- Match Statistics Section -->
+    <h2>Match Statistics:</h2>
+    <ul>
+        <li>Total Matches: {{ total_matches }}</li>
+        <li>Finished Matches: {{ finished_matches }}</li>
+        <li>Ongoing Matches: {{ ongoing_matches }}</li>
+        <!-- Add more match-related statistics here -->
+    </ul>
+
+    <h2>Match Data:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Match Time</th>
+                <th>Finished</th>
+                <th>Competition Category</th>
+                <th>Judge</th>
+                <th>Round</th>
+                <th>Member</th>
+                <th>Score</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for match in matches %}
+            {% for match_member in match.matchmember_set.all %}
+            <tr>
+                <td>{{ match.match_time|date:"F d, Y H:i A" }}</td>
+                <td>{{ match.finished|yesno:"Yes,No" }}</td>
+                <td>{{ match.competition_category }}</td>
+                <td>{{ match.judge }}</td>
+                <td>{{ match.get_round_display }}</td>
+                <td>{{ match_member.member }}</td>
+                <td>{{ match_member.score }}</td>
+                <td>{{ match_member.get_status_display }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8">No match data available.</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>

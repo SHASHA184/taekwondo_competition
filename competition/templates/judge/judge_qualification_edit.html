@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_edit.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="edit-form">
+    <h2>Edit Judge</h2>
+    <form method="post" class="edit-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" class="edit-button">
+    </form>
+</div>
+{% endblock %}
+```

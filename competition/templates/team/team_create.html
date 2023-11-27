@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_create.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="edit-form" action="{% url 'team-create' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="edit-button" type="submit" value="Create Team" />
+</form>
+{% endblock %}
+```

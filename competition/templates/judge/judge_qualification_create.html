@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_create.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="edit-form">
+    <h1>Add Judge Qualification</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="description">Description:</label>
+        <br>
+        <textarea id="description" name="description"></textarea><br>
+        <input class="edit-button" type="submit" value="Create Qualification" />
+    </form>
+</div>
+{% endblock %}

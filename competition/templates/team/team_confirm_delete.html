@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<style>
+    .warning-container {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .warning-container h2 {
+        color: #856404;
+    }
+
+    .warning-container p {
+        font-size: 16px;
+        color: #856404;
+    }
+
+    /* Styles for buttons */
+    .delete-button {
+        padding: 10px 15px;
+        font-size: 20px;
+        margin-right: 10px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .delete-button:hover {
+        background-color: #c82333;
+    }
+
+    .cancel-button {
+        padding: 10px 15px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        /* Remove underline from the link */
+    }
+
+    .cancel-button:hover {
+        background-color: #5a6268;
+    }
+
+    /* Styles for alert messages */
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .alert.warning {
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+        color: #856404;
+    }
+
+    /* Additional styles for the alert message to make it dismissible if needed */
+    .alert.dismissible {
+        padding-right: 35px;
+        position: relative;
+    }
+
+    .alert.dismissible .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 12px;
+
+    }
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="warning-container">
+    <h2>Warning</h2>
+    <p>Are you sure you want to delete the team "{{ team.name }}"? This will also delete all associated members.</p>
+    <form method="post" action="{% url 'team-delete' team.id %}">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Delete" class="delete-button">
+        <a href="{% url 'teams-list' %}" class="cancel-button">Cancel</a>
+    </form>
+</div>
+{% endblock %}

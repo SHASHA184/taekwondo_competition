@@ -1,0 +1,87 @@
+.detail {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.detail h2,
+.detail h3 {
+    color: #333;
+}
+.detail p {
+    color: #555;
+}
+.detail ul {
+    list-style-type: none;
+    padding: 0;
+}
+.detail ul li {
+    padding: 5px;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.view-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #006ce0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    color: #f2f2f2e3;
+}
+
+.view-button:hover {
+    background-color: #007bff;
+}
+
+.content {
+    /* ... other styles ... */
+    position: relative; /* remove absolute positioning */
+    top: 0; /* start from the top edge of the main-page */
+    left: 15%; /* leave space for the sidebar */
+    width: 85%; /* take the remaining width of the screen */
+    max-height: calc(100vh); /* set a maximum height with respect to the viewport height */
+    overflow-y: auto; /* allow vertical scrolling */
+    transform: none; /* remove any transformation */
+    margin-top: 20px; /* adjust the margin at the top if necessary */
+    padding: 20px; /* maintain padding for aesthetics */
+    text-align: center;
+}
+
+.edit-button {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    display: inline-block;
+    background-color: #e94e77;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #e00b44;
+}

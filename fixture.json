@@ -1,0 +1,1396 @@
+[
+    {
+        "model": "competition.belt",
+        "pk": 1,
+        "fields": {
+            "name": "10th GUP",
+            "color": "White"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 2,
+        "fields": {
+            "name": "9th GUP",
+            "color": "Yellow"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 3,
+        "fields": {
+            "name": "8th GUP",
+            "color": "Orange"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 4,
+        "fields": {
+            "name": "7th GUP",
+            "color": "Green"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 5,
+        "fields": {
+            "name": "6th GUP",
+            "color": "Blue"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 6,
+        "fields": {
+            "name": "5th GUP",
+            "color": "Brown"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 7,
+        "fields": {
+            "name": "4th GUP",
+            "color": "Senior Brown"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 8,
+        "fields": {
+            "name": "3rd GUP",
+            "color": "Red"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 9,
+        "fields": {
+            "name": "2nd GUP",
+            "color": "Poom"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 10,
+        "fields": {
+            "name": "1st GUP",
+            "color": "Black"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 11,
+        "fields": {
+            "name": "1st DAN",
+            "color": "Black"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 12,
+        "fields": {
+            "name": "2nd DAN",
+            "color": "Black"
+        }
+    },
+    {
+        "model": "competition.belt",
+        "pk": 13,
+        "fields": {
+            "name": "3rd DAN",
+            "color": "Black"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 1,
+        "fields": {
+            "name": "Hardi",
+            "location": "Balakliiya"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 2,
+        "fields": {
+            "name": "Koryo",
+            "location": "Kharkiv"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 3,
+        "fields": {
+            "name": "Fudokan",
+            "location": "Kyiv"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 4,
+        "fields": {
+            "name": "Taeguk",
+            "location": "Lviv"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 5,
+        "fields": {
+            "name": "Palgwe",
+            "location": "Odesa"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 6,
+        "fields": {
+            "name": "Jirugi",
+            "location": "Dnipro"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 7,
+        "fields": {
+            "name": "Hanryu",
+            "location": "Mykolaiv"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 8,
+        "fields": {
+            "name": "Iljang",
+            "location": "Zaporizhzhia"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 9,
+        "fields": {
+            "name": "Chiljang",
+            "location": "Vinnytsia"
+        }
+    },
+    {
+        "model": "competition.team",
+        "pk": 10,
+        "fields": {
+            "name": "Samjang",
+            "location": "Lutsk"
+        }
+    },
+    {
+        "model": "competition.coach",
+        "pk": 1,
+        "fields": {
+            "full_name": "Dmitriy Nikolaevich Harmash",
+            "age": 35,
+            "team": 1
+        }
+    },
+    {
+        "model": "competition.coach",
+        "pk": 2,
+        "fields": {
+            "full_name": "Vladimir Nikolaevich Kovalenko",
+            "age": 45,
+            "team": 2
+        }
+    },
+    {
+        "model": "competition.coach",
+        "pk": 3,
+        "fields": {
+            "full_name": "Maksim Andreevich Vlasenko",
+            "age": 30,
+            "team": 3
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 1,
+        "fields": {
+            "name": "Juniors SUPER FIN Male",
+            "weight_from": 45,
+            "weight_to": 50,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 2,
+        "fields": {
+            "name": "Juniors FIN Male",
+            "weight_from": 50,
+            "weight_to": 54,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 3,
+        "fields": {
+            "name": "Juniors FLY Male",
+            "weight_from": 54,
+            "weight_to": 58,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 4,
+        "fields": {
+            "name": "Juniors BANTAM Male",
+            "weight_from": 58,
+            "weight_to": 63,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 5,
+        "fields": {
+            "name": "Juniors FEATHER Male",
+            "weight_from": 63,
+            "weight_to": 68,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 6,
+        "fields": {
+            "name": "Juniors LIGHT Male",
+            "weight_from": 68,
+            "weight_to": 73,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 7,
+        "fields": {
+            "name": "Juniors WELTER Male",
+            "weight_from": 73,
+            "weight_to": 78,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 8,
+        "fields": {
+            "name": "Juniors MIDDLE Male",
+            "weight_from": 78,
+            "weight_to": 83,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 9,
+        "fields": {
+            "name": "Juniors HEAVY Male",
+            "weight_from": 83,
+            "weight_to": 88,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 10,
+        "fields": {
+            "name": "Juniors SUPER HEAVY Male",
+            "weight_from": 88,
+            "weight_to": 93,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 11,
+        "fields": {
+            "name": "Juniors SUPER FIN Female",
+            "weight_from": 38,
+            "weight_to": 43,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 12,
+        "fields": {
+            "name": "Juniors FIN Female",
+            "weight_from": 43,
+            "weight_to": 46,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 13,
+        "fields": {
+            "name": "Juniors FLY Female",
+            "weight_from": 46,
+            "weight_to": 49,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 14,
+        "fields": {
+            "name": "Juniors BANTAM Female",
+            "weight_from": 49,
+            "weight_to": 53,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 15,
+        "fields": {
+            "name": "Juniors FEATHER Female",
+            "weight_from": 53,
+            "weight_to": 57,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 16,
+        "fields": {
+            "name": "Juniors LIGHT Female",
+            "weight_from": 57,
+            "weight_to": 62,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 17,
+        "fields": {
+            "name": "Juniors WELTER Female",
+            "weight_from": 62,
+            "weight_to": 67,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 18,
+        "fields": {
+            "name": "Juniors MIDDLE Female",
+            "weight_from": 67,
+            "weight_to": 72,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 19,
+        "fields": {
+            "name": "Juniors HEAVY Female",
+            "weight_from": 72,
+            "weight_to": 77,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 20,
+        "fields": {
+            "name": "Juniors SUPER HEAVY Female",
+            "weight_from": 77,
+            "weight_to": 82,
+            "years_from": 12,
+            "years_to": 17,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 21,
+        "fields": {
+            "name": "Adults SUPER FIN Male",
+            "weight_from": 45,
+            "weight_to": 50,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 22,
+        "fields": {
+            "name": "Adults FIN Male",
+            "weight_from": 50,
+            "weight_to": 54,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 23,
+        "fields": {
+            "name": "Adults FLY Male",
+            "weight_from": 54,
+            "weight_to": 58,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 24,
+        "fields": {
+            "name": "Adults BANTAM Male",
+            "weight_from": 58,
+            "weight_to": 63,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 25,
+        "fields": {
+            "name": "Adults FEATHER Male",
+            "weight_from": 63,
+            "weight_to": 68,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 26,
+        "fields": {
+            "name": "Adults LIGHT Male",
+            "weight_from": 68,
+            "weight_to": 73,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 27,
+        "fields": {
+            "name": "Adults WELTER Male",
+            "weight_from": 73,
+            "weight_to": 78,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 28,
+        "fields": {
+            "name": "Adults MIDDLE Male",
+            "weight_from": 78,
+            "weight_to": 83,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 29,
+        "fields": {
+            "name": "Adults HEAVY Male",
+            "weight_from": 83,
+            "weight_to": 88,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 30,
+        "fields": {
+            "name": "Adults SUPER HEAVY Male",
+            "weight_from": 88,
+            "weight_to": 93,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 31,
+        "fields": {
+            "name": "Adults SUPER FIN Female",
+            "weight_from": 38,
+            "weight_to": 43,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 32,
+        "fields": {
+            "name": "Adults FIN Female",
+            "weight_from": 43,
+            "weight_to": 46,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 33,
+        "fields": {
+            "name": "Adults FLY Female",
+            "weight_from": 46,
+            "weight_to": 49,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 34,
+        "fields": {
+            "name": "Adults BANTAM Female",
+            "weight_from": 49,
+            "weight_to": 53,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 35,
+        "fields": {
+            "name": "Adults FEATHER Female",
+            "weight_from": 53,
+            "weight_to": 57,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 36,
+        "fields": {
+            "name": "Adults LIGHT Female",
+            "weight_from": 57,
+            "weight_to": 62,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 37,
+        "fields": {
+            "name": "Adults WELTER Female",
+            "weight_from": 62,
+            "weight_to": 67,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 38,
+        "fields": {
+            "name": "Adults MIDDLE Female",
+            "weight_from": 67,
+            "weight_to": 72,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 39,
+        "fields": {
+            "name": "Adults HEAVY Female",
+            "weight_from": 72,
+            "weight_to": 77,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 40,
+        "fields": {
+            "name": "Adults SUPER HEAVY Female",
+            "weight_from": 77,
+            "weight_to": 82,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 41,
+        "fields": {
+            "name": "Juniors FIN Male",
+            "weight_from": 40,
+            "weight_to": 45,
+            "years_from": 14,
+            "years_to": 17,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 41,
+        "fields": {
+            "name": "Seniors WELTER Male",
+            "weight_from": 73,
+            "weight_to": 78,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 42,
+        "fields": {
+            "name": "Seniors MIDDLE Male",
+            "weight_from": 78,
+            "weight_to": 83,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 43,
+        "fields": {
+            "name": "Seniors HEAVY Male",
+            "weight_from": 83,
+            "weight_to": 88,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 44,
+        "fields": {
+            "name": "Seniors SUPER HEAVY Male",
+            "weight_from": 88,
+            "weight_to": 93,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 45,
+        "fields": {
+            "name": "Seniors SUPER FIN Female",
+            "weight_from": 38,
+            "weight_to": 43,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 46,
+        "fields": {
+            "name": "Seniors FIN Female",
+            "weight_from": 43,
+            "weight_to": 46,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 47,
+        "fields": {
+            "name": "Seniors FLY Female",
+            "weight_from": 46,
+            "weight_to": 49,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 48,
+        "fields": {
+            "name": "Seniors BANTAM Female",
+            "weight_from": 49,
+            "weight_to": 53,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 49,
+        "fields": {
+            "name": "Seniors FEATHER Female",
+            "weight_from": 53,
+            "weight_to": 57,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 50,
+        "fields": {
+            "name": "Seniors LIGHT Female",
+            "weight_from": 57,
+            "weight_to": 62,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 51,
+        "fields": {
+            "name": "Seniors WELTER Female",
+            "weight_from": 62,
+            "weight_to": 67,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 52,
+        "fields": {
+            "name": "Seniors MIDDLE Female",
+            "weight_from": 67,
+            "weight_to": 72,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 53,
+        "fields": {
+            "name": "Seniors HEAVY Female",
+            "weight_from": 72,
+            "weight_to": 77,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 54,
+        "fields": {
+            "name": "Seniors SUPER HEAVY Female",
+            "weight_from": 77,
+            "weight_to": 82,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 55,
+        "fields": {
+            "name": "Seniors ULTRA HEAVY Male",
+            "weight_from": 93,
+            "weight_to": 100,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 56,
+        "fields": {
+            "name": "Seniors MEGA HEAVY Male",
+            "weight_from": 100,
+            "weight_to": 110,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 57,
+        "fields": {
+            "name": "Seniors ULTRA HEAVY Female",
+            "weight_from": 82,
+            "weight_to": 90,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 58,
+        "fields": {
+            "name": "Seniors MEGA HEAVY Female",
+            "weight_from": 90,
+            "weight_to": 100,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 2
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 1,
+        "fields": {
+            "full_name": "Shelekhan Oleksandr",
+            "age": 18,
+            "gender": 1,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 250,
+            "team": 1
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 2,
+        "fields": {
+            "full_name": "Ivan Kovalenko",
+            "age": 22,
+            "gender": 1,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 85,
+            "team": 2
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 3,
+        "fields": {
+            "full_name": "Dmitro Savchenko",
+            "age": 21,
+            "gender": 1,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 87,
+            "team": 3
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 30,
+        "fields": {
+            "name": "Seniors LIGHT Male",
+            "weight_from": 58,
+            "weight_to": 64,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 31,
+        "fields": {
+            "name": "Seniors MIDDLE Male",
+            "weight_from": 64,
+            "weight_to": 70,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.weightclass",
+        "pk": 32,
+        "fields": {
+            "name": "Seniors HEAVY Male",
+            "weight_from": 80,
+            "weight_to": 87,
+            "years_from": 18,
+            "years_to": 35,
+            "gender": 1
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 4,
+        "fields": {
+            "full_name": "John Doe",
+            "age": 25,
+            "gender": 1,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 250,
+            "team": 1
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 5,
+        "fields": {
+            "full_name": "Jane Smith",
+            "age": 28,
+            "gender": 2,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 200,
+            "team": 2
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 6,
+        "fields": {
+            "full_name": "Bob Johnson",
+            "age": 30,
+            "gender": 1,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 150,
+            "team": 3
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 7,
+        "fields": {
+            "full_name": "Sarah Lee",
+            "age": 22,
+            "gender": 2,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 100,
+            "team": 4
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 8,
+        "fields": {
+            "full_name": "David Kim",
+            "age": 27,
+            "gender": 1,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 50,
+            "team": 5
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 9,
+        "fields": {
+            "full_name": "Emily Chen",
+            "age": 24,
+            "gender": 2,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 75,
+            "team": 6
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 10,
+        "fields": {
+            "full_name": "Michael Lee",
+            "age": 29,
+            "gender": 1,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 125,
+            "team": 7
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 11,
+        "fields": {
+            "full_name": "Jessica Kim",
+            "age": 26,
+            "gender": 2,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 175,
+            "team": 8
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 12,
+        "fields": {
+            "full_name": "Daniel Park",
+            "age": 23,
+            "gender": 1,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 225,
+            "team": 9
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 13,
+        "fields": {
+            "full_name": "Amanda Lee",
+            "age": 30,
+            "gender": 2,
+            "weight_class": 30,
+            "belt_rank": 8,
+            "rating": 275,
+            "team": 10
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 14,
+        "fields": {
+            "full_name": "Mark Johnson",
+            "age": 24,
+            "gender": 1,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 250,
+            "team": 1
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 15,
+        "fields": {
+            "full_name": "Karen Kim",
+            "age": 27,
+            "gender": 2,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 200,
+            "team": 2
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 16,
+        "fields": {
+            "full_name": "Tom Lee",
+            "age": 30,
+            "gender": 1,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 150,
+            "team": 3
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 17,
+        "fields": {
+            "full_name": "Linda Chen",
+            "age": 22,
+            "gender": 2,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 100,
+            "team": 4
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 18,
+        "fields": {
+            "full_name": "Steve Kim",
+            "age": 27,
+            "gender": 1,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 50,
+            "team": 5
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 19,
+        "fields": {
+            "full_name": "Grace Lee",
+            "age": 24,
+            "gender": 2,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 75,
+            "team": 6
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 20,
+        "fields": {
+            "full_name": "Chris Kim",
+            "age": 29,
+            "gender": 1,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 125,
+            "team": 7
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 21,
+        "fields": {
+            "full_name": "Sophia Kim",
+            "age": 26,
+            "gender": 2,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 175,
+            "team": 8
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 22,
+        "fields": {
+            "full_name": "Alex Park",
+            "age": 23,
+            "gender": 1,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 225,
+            "team": 9
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 23,
+        "fields": {
+            "full_name": "Olivia Lee",
+            "age": 30,
+            "gender": 2,
+            "weight_class": 31,
+            "belt_rank": 8,
+            "rating": 275,
+            "team": 10
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 24,
+        "fields": {
+            "full_name": "Mike Johnson",
+            "age": 24,
+            "gender": 1,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 250,
+            "team": 1
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 25,
+        "fields": {
+            "full_name": "Jenny Kim",
+            "age": 27,
+            "gender": 2,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 200,
+            "team": 2
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 26,
+        "fields": {
+            "full_name": "Tim Lee",
+            "age": 30,
+            "gender": 1,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 150,
+            "team": 3
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 27,
+        "fields": {
+            "full_name": "Lucy Chen",
+            "age": 22,
+            "gender": 2,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 100,
+            "team": 4
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 28,
+        "fields": {
+            "full_name": "Tony Kim",
+            "age": 27,
+            "gender": 1,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 50,
+            "team": 5
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 29,
+        "fields": {
+            "full_name": "Lisa Lee",
+            "age": 24,
+            "gender": 2,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 75,
+            "team": 6
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 30,
+        "fields": {
+            "full_name": "Peter Kim",
+            "age": 29,
+            "gender": 1,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 125,
+            "team": 7
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 31,
+        "fields": {
+            "full_name": "Rachel Kim",
+            "age": 26,
+            "gender": 2,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 175,
+            "team": 8
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 32,
+        "fields": {
+            "full_name": "Kevin Park",
+            "age": 23,
+            "gender": 1,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 225,
+            "team": 9
+        }
+    },
+    {
+        "model": "competition.member",
+        "pk": 33,
+        "fields": {
+            "full_name": "Sophie Lee",
+            "age": 30,
+            "gender": 2,
+            "weight_class": 32,
+            "belt_rank": 8,
+            "rating": 275,
+            "team": 10
+        }
+    },
+    {
+        "model": "competition.competition",
+        "pk": 1,
+        "fields": {
+            "name": "Kharkiv Taekwondo Championship",
+            "location": "Kharkiv, Ukraine",
+            "date": "2023-10-24T10:00:00",
+            "finished": false
+        }
+    }
+]

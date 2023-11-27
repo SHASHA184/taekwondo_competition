@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_edit.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="edit-form">
+    <h1>Edit Match</h1>
+    <form method="post" class="edit-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ formset.management_form }}
+        {% for form in formset %}
+            {{ form.id }}
+            <div class='form-inline'>
+                <label for="Member">Member:</label>
+                {{ form.member }}
+                <label for="Score">Score:</label>
+                {{ form.score }}
+                <label for="Status">Status:</label>
+                <select name="{{ form.prefix }}-status">
+                    {% for value, label in form.fields.status.choices %}
+                    <option value="{{ value }}" {% if form.instance.status == value or not form.instance.pk and value == 0 %}selected{% endif %}>
+                        {{ label }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+        {% endfor %}
+        <button type="submit" class="edit-button">Save</button>
+    </form>
+</div>
+{% endblock %}

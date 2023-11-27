@@ -1,0 +1,79 @@
+<!-- match_generator/templates/generate_matches.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Matches</title>
+</head>
+<style>
+    .add-container {
+        margin: 20px;
+    }
+    
+    /* Style the form elements */
+    form {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+</style>
+<body>
+    <h1>Generate Matches</h1>
+    <form method="get">
+        <h3>Filter by Date Interval:</h3>
+        <label for="date_from">Date from:</label>
+        <input type="date" name="date_from" id="date_from" value="{{ date_from }}">
+        <label for="date_to">Date to:</label>
+        <input type="date" name="date_to" id="date_to" value="{{ date_to }}">
+        <button type="submit">Apply Filters</button>
+        <a href="{% url 'generate-matches' %}">Clear Filters</a>
+    </form>
+    <h3>Competitions:</h3>
+    <form method="post">
+        {% csrf_token %}
+        {% for competition in competitions %}
+            <label>
+                <input type="checkbox" name="competitions" value="{{ competition.id }}">
+                {{ competition.name }}
+            </label><br>
+        {% endfor %}
+        <br>
+        <button type="submit">Generate Matches</button>
+    </form>
+</body>
+</html>

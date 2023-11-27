@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_list.css' %}">
+<script>
+    function confirmDelete(itemName) {
+        return confirm('Do you really want to delete team "' + itemName + '"?');
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="add-container">
+    <form method="get" class="sort-filter-form">
+        <label for="location">Find by Location:</label>
+        <select class="drop-down" name="location" id="location" multiple size="5" onchange="this.form.submit()">
+            {% for location in locations %} <!-- 'locations' should be a list of all possible locations -->
+            <option value="{{ location }}" {% if location in selected_locations %}selected{% endif %}>
+                {{ location }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <!-- coach filter -->
+        <label for="coach">Find by Coach:</label>
+        <input type="text" name="coach" id="coach" value="{{ request.GET.coach }}">
+
+        <!-- filter by number of members -->
+        <label for="member_count_from">Number of Members from:</label>
+        <input type="number" name="member_count_from" id="member_count_from"
+            value="{{ request.GET.member_count_from }}">
+        <label for="member_count_to">Number of Members to:</label>
+        <input type="number" name="member_count_to" id="member_count_to" value="{{ request.GET.member_count_to }}">
+
+        <label for="sort">Sort by:</label>
+        <select name="sort" id="sort">
+            <option value="name">Name</option>
+            <option value="location">Location</option>
+            <option value="coach">Coach</option>
+            <option value="member_count">Number of Members</option>
+        </select>
+
+        <button type="submit" class="edit-button">Apply</button>
+        <a href="{% url 'teams-list' %}" class="reset-button">Reset</a>
+    </form>
+    <a href="{% url 'team-create' %}" class="add-button">Add Team</a>
+
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>Location</th>
+            <th>Number of Members</th>
+            <th colspan="3">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for team in teams %}
+        <tr>
+            <td>{{ team.name }}</td>
+            <td>{{ team.location }}</td>
+            <td>{{ team.member_count }}</td>
+            <td><a href="{% url 'team-detail' team.id %}" class="detail-button">Detail</a></td>
+            <td><a href="{% url 'team-edit' team.id %}" class="edit-button">Edit</a></td>
+            <td><a href="{% url 'team-delete' team.id %}" class="delete-button"
+                    onclick="return confirmDelete('{{ team.name }}')">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

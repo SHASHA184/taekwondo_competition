@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'competition/competition_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="detail">
+    <!-- edit button -->
+    <a href="{% url 'member-edit' member.id %}" class="edit-button">Edit</a>
+    <!-- delete button -->
+    <a href="{% url 'member-delete' member.id %}" class="delete-button">Delete</a>
+    <h1>Member Detail</h1>
+    <p>Full Name: {{ member.full_name }}</p>
+    <p>Age: {{ member.age }}</p>
+    <p>Gender: {{ member.get_gender_display }}</p>
+    <p>Weight: {{ member.weight_class.name }} ({{ member.weight_class.weight_from }} - {{ member.weight_class.weight_to }})</p>
+    <p>Belt: {{ member.belt_rank }}</p>
+    <p>Rating: {{ member.rating }}</p>
+    <p>Team:</p>
+    <a href="{% url 'team-detail' member.team.id %}" class="view-button">{{ member.team.name }}</a>
+</div>
+
+{% endblock %}
