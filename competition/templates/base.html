@@ -16,6 +16,7 @@
     <div class="mask-group">
         <div class="main-page">
             <nav class="sidebar" id="nav">
+                {% if user.is_authenticated %}
                 <div class="sidebar-element">
                     <a href="{% url 'competitions-list' %}" class="button">Competitions</a>
                 </div>
@@ -46,7 +47,21 @@
                 <div class="sidebar-element">
                     <a href="{% url 'competition-statistics' %}" class="button">Competition Statistics</a>
                 </div>
-                
+                <div class="sidebar-element">
+                    <a href="{% url 'match-statistics' %}" class="button">Match Statistics</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'logout' %}" class="button">Logout</a>
+                </div>
+                {% else %}
+                <div class="sidebar-element">
+                    <a href="{% url 'login' %}" class="button">Login</a>
+                </div>
+                <div class="sidebar-element">
+                    <a href="{% url 'signup' %}" class="button">Sign Up</a>
+                </div>
+                {% endif %}
+
             </nav>
 
             <div class="content">

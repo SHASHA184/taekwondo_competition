@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box; /* Added box-sizing property */
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Added box-sizing property */
+        }
+        
+        button[type="submit"] {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* Styles for sign up button */
+        .signup-button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+        <a href="{% url 'signup' %}" class="signup-button">Sign up</a>
+    </form>
+</body>
+</html>

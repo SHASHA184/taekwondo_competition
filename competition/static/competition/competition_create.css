@@ -58,6 +58,7 @@ input {
 
 /* Style for the buttons */
 .edit-button, .cancel-button, .add-button {
+    margin-top: 10px; /* Add a little bit of space at the top */
     padding: 10px 15px; /* Padding inside the buttons */
     margin-right: 10px; /* Adds margin to the right of buttons */
     text-decoration: none; /* Removes underline from the cancel link */

@@ -50,70 +50,74 @@ def simulate_matches(competitions=None):
         return
 
     matches = []
+    successful_competitions = []
 
-    for category in categories:
-        all_members = list(Member.objects.filter(
-            weight_class=category.weight_class))
-        all_matches = []
-        random.shuffle(all_members)
+    for competition in competitions:
+        for category in categories:
+            all_members = list(Member.objects.filter(
+                weight_class=category.weight_class))
+            all_matches = []
+            random.shuffle(all_members)
 
-        if len(all_members) < 2:
-            continue
+            if len(all_members) < 2:
+                continue
 
-        # extra round
-        if len(all_members) % 2 != 0:
-            # Add a "bye" member
-            extra_match, score_a, score_b = create_match(
-                category, Judge.objects.all(), all_members.pop(), all_members.pop(), 1)
-            all_members.append(extra_match.matchmember_set.get(
-                status=1).member)
-            all_matches.append(extra_match)
+            # extra round
+            if len(all_members) % 2 != 0:
+                # Add a "bye" member
+                extra_match, score_a, score_b = create_match(
+                    category, Judge.objects.all(), all_members.pop(), all_members.pop(), 1)
+                all_members.append(extra_match.matchmember_set.get(
+                    status=1).member)
+                all_matches.append(extra_match)
 
-        # 1/16
-        if len(all_members) > 16:
-            matches, all_members = create_round(
-                category, Judge.objects.all(), all_members, 1, 16)
-            all_matches.extend(matches)
+            # 1/16
+            if len(all_members) > 16:
+                matches, all_members = create_round(
+                    category, Judge.objects.all(), all_members, 1, 16)
+                all_matches.extend(matches)
 
-        # 1/8
-        if len(all_members) > 8:
-            matches, all_members = create_round(
-                category, Judge.objects.all(), all_members, 2, 8)
-            all_matches.extend(matches)
+            # 1/8
+            if len(all_members) > 8:
+                matches, all_members = create_round(
+                    category, Judge.objects.all(), all_members, 2, 8)
+                all_matches.extend(matches)
 
-        # 1/4
-        if len(all_members) > 4:
-            matches, all_members = create_round(
-                category, Judge.objects.all(), all_members, 3, 4)
-            all_matches.extend(matches)
+            # 1/4
+            if len(all_members) > 4:
+                matches, all_members = create_round(
+                    category, Judge.objects.all(), all_members, 3, 4)
+                all_matches.extend(matches)
 
-        # 1/2
-        semifinal_losers = []
-        if len(all_members) > 2:
-            matches, all_members = create_round(
-                category, Judge.objects.all(), all_members, 4, 2)
-            all_matches.extend(matches)
-            # Collect the losers for the third-place match
-            for match in matches:
-                semifinal_losers.append(
-                    match.matchmember_set.get(status=2).member)
+            # 1/2
+            semifinal_losers = []
+            if len(all_members) > 2:
+                matches, all_members = create_round(
+                    category, Judge.objects.all(), all_members, 4, 2)
+                all_matches.extend(matches)
+                # Collect the losers for the third-place match
+                for match in matches:
+                    semifinal_losers.append(
+                        match.matchmember_set.get(status=2).member)
 
-        # Third-place match
-        if len(semifinal_losers) == 2:
-            third_place_match, score_a, score_b = create_match(
-                category, Judge.objects.all(), semifinal_losers[0], semifinal_losers[1], 4)  # Assume round 6 is for third-place
-            all_matches.append(third_place_match)
+            # Third-place match
+            if len(semifinal_losers) == 2:
+                third_place_match, score_a, score_b = create_match(
+                    category, Judge.objects.all(), semifinal_losers[0], semifinal_losers[1], 4)  # Assume round 6 is for third-place
+                all_matches.append(third_place_match)
 
-        # Final
-        if len(all_members) > 1:
-            matches, all_members = create_round(
-                category, Judge.objects.all(), all_members, 5, 1)
-            all_matches.extend(matches)
+            # Final
+            if len(all_members) > 1:
+                matches, all_members = create_round(
+                    category, Judge.objects.all(), all_members, 5, 1)
+                all_matches.extend(matches)
 
-        for member in all_members:
-            member.save()
+            for member in all_members:
+                member.save()
 
-    return all_matches
+        successful_competitions.append(competition.pk)
+
+    return successful_competitions
 
 
 def create_round(category, judges, members, round_number, count_after):
@@ -157,5 +161,5 @@ def create_match(category, judges, member1, member2, round_number):
     print(
         f"Match created in round {round_number}: {member1.full_name} vs {member2.full_name} ({score_a}:{score_b})")
 
-    # Возвращает объект Match и счета участников
+    # Return the match and scores
     return match, score_a, score_b

@@ -10,6 +10,10 @@ from django.db.models import Count, Max
 from django.utils import timezone
 from competition.management.commands.simulate_matches import simulate_matches
 from django.contrib import messages
+from django.core.exceptions import ValidationError
+from django.contrib.auth.models import Group
+from django.contrib.auth.views import LogoutView
+from functools import wraps
 
 
 def generate_matches(request):
@@ -18,23 +22,10 @@ def generate_matches(request):
         selected_competitions = request.POST.getlist('competitions')
 
         # Call your `simulate_matches` function with the selected competitions
-        simulate_matches(selected_competitions)
+        successful_competitions = simulate_matches(selected_competitions)
 
-        # make all competitions finished
-
-        Competition.objects.filter(id__in=selected_competitions).update(
+        Competition.objects.filter(id__in=successful_competitions).update(
             finished=True)
-
-        # After generating matches, you can redirect to a success page or display the matches
-        # queryset = []
-        # for match in generated_matches:
-        #     members = match.matchmember_set.all()
-        #     if len(members) == 2:
-        #         queryset.append(
-        #             {"match": match, "member1": members[0], "member2": members[1]})
-
-        # result = {'matches': queryset}
-        # return render(request, 'match/matches_list.html', result)
         return redirect('matches-list')
     else:
         # Filter competitions based on date range only for initial page load
@@ -261,8 +252,9 @@ def match_list(request):
 
     competition_filter = request.GET.get('competition')
     if competition_filter:
+        # find competition by name
         matches = matches.filter(
-            competition_category__competition_id=competition_filter)
+            competition_category__competition__name__icontains=competition_filter)
 
     # Apply filters
     date_from_filter = request.GET.get('date_from')
@@ -529,7 +521,7 @@ def team_list(request):
     if sort_by in ['name', 'coach', 'member_count']:
         teams = teams.order_by(sort_by)
 
-    locations = Competition.objects.values_list(
+    locations = Team.objects.values_list(
         'location', flat=True).distinct()
 
     context = {'teams': teams, 'locations': locations, }
@@ -632,3 +624,17 @@ def coach_delete(request, coach_id):
     coach = get_object_or_404(Coach, pk=coach_id)
     coach.delete()
     return redirect('coaches-list')
+
+
+class UserRegistrationView(CreateView):
+    form_class = UserRegistrationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
+
+    def form_valid(self, form):
+        user = form.save()
+        group_name = 'Admin'
+        # Try to get the group; create it if it doesn't exist
+        group, created = Group.objects.get_or_create(name=group_name)
+        user.groups.add(group)
+        return super(UserRegistrationView, self).form_valid(form)

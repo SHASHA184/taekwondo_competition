@@ -86,3 +86,16 @@ body, html {
     text-decoration: none; /* Видалення підкреслення при наведенні */
 }
 
+
+.main-title {
+    text-align: center; /* Вирівнювання заголовку по центру */
+    color: #2c3e50; /* Колір заголовку */
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+.main-text {
+    text-align: justify; /* Вирівнювання тексту по ширині */
+    padding: 0 20px; /* Відступи з обох сторін */
+    line-height: 1.6; /* Висота лінії тексту */
+    color: #333; /* Колір тексту */
+}
