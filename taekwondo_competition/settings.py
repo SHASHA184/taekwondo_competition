@@ -78,12 +78,8 @@ WSGI_APPLICATION = 'taekwondo_competition.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config.DEFAULT_DB_NAME,
-        'USER': config.DEFAULT_DB_USER,
-        'PASSWORD': config.DEFAULT_DB_PASSWORD,
-        'HOST': config.DEFAULT_HOST,
-        'PORT': config.DEFAULT_PORT,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

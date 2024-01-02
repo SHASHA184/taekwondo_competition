@@ -32,9 +32,7 @@ class Competition(models.Model):
     date = models.DateTimeField()
     finished = models.BooleanField(default=False)
 
-    def get_absolute_url(self):
-        return reverse('competition-detail', kwargs={'pk': self.pk})
-
+    
     def __str__(self):
         return self.name
 
