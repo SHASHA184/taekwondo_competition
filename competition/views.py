@@ -261,11 +261,11 @@ def match_list(request):
     date_to_filter = request.GET.get('date_to')
     if date_from_filter and date_to_filter:
         matches = matches.filter(
-            date__range=[date_from_filter, date_to_filter])
+            match_time__range=[date_from_filter, date_to_filter])
     elif date_from_filter:
-        matches = matches.filter(date__gte=date_from_filter)
+        matches = matches.filter(match_time__gte=date_from_filter)
     elif date_to_filter:
-        matches = matches.filter(date__lte=date_to_filter)
+        matches = matches.filter(match_time__lte=date_to_filter)
 
     finished_filter = request.GET.get('finished')
     if finished_filter:

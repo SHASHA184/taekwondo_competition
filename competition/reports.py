@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from weasyprint import HTML
-from .models import Competition, Member, Match
-from django.db.models import Case, When, IntegerField, Count, Prefetch, Q
+from .models import Competition, Member
+from django.db.models import Case, When, IntegerField, Count, Q
 from datetime import datetime, timedelta
 from django.utils import timezone
 from django.shortcuts import render
